@@ -20,7 +20,7 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I am a Software Engineer <br className='sm:block hidden' />
-            and I develop Fullstack web apps
+            and I develop Fullstack web applications.
           </p>
         </div>
       </div>

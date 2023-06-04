@@ -28,7 +28,7 @@ const ServiceCard = ({ index, title, icon, links }) => (
               alt="web-development"
               className="w-16 h-16 object-contain"
             />
-            <p className="w-16 h-16 py-5 px-8 object-contain">
+            <p className="text-white w-16 h-16 py-5 px-8 object-contain">
               {link.technology}
             </p>
           </div>

@@ -181,8 +181,10 @@ const Contact = () => {
                 required
               />
             </label>
-            <label className="flex flex-col text-align:center">
+            <label className="flex flex-col py-4 px-0">
               <ReCAPTCHA
+                className="recaptcha"
+                theme="dark"
                 sitekey={import.meta.env.VITE_APP_SITE_KEY}
                 ref={captchaRef}
                 onChange={(value) => setValidToken(value)}

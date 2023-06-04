@@ -1,17 +1,18 @@
 {
+  "homepage": "https://abhisheksaxena1998.github.io/portfolio",
   "name": "3dfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cloudant/cloudant": "^4.5.1",
     "@emailjs/browser": "^3.11.0",
-    "@ibm-cloud/cloudant": "^0.5.2",
     "@react-three/drei": "^9.70.0",
     "@react-three/fiber": "^8.13.0",
     "framer-motion": "^9.1.7",

@@ -104,7 +104,7 @@ const Contact = () => {
               " I will get back to you as soon as possible."
             );
           },
-          (error) => {
+          () => {
             setLoading(false);
             openNotification(
               "error",

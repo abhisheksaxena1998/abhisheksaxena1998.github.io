@@ -7,6 +7,9 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useState } from "react";
+import { ExpandOutlined } from "@ant-design/icons";
+import ProjectDetails from "./ProjectDetails";
 
 const ProjectCard = ({
   index,
@@ -16,7 +19,9 @@ const ProjectCard = ({
   image,
   source_code_link,
   isMobile,
+  detailed_content,
 }) => {
+  const [isDetailsCardExpanded, setIsDetailsCardExpanded] = useState(false);
   return (
     <motion.div
       variants={!isMobile && fadeIn("up", "spring", index * 0.5, 0.75)}
@@ -29,6 +34,16 @@ const ProjectCard = ({
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
+        {isDetailsCardExpanded && (
+          <ProjectDetails
+            isDetailsCardExpanded={isDetailsCardExpanded}
+            setIsDetailsCardExpanded={setIsDetailsCardExpanded}
+            detailed_content={detailed_content}
+            isMobile={isMobile}
+            source_code_link={source_code_link}
+            image={image}
+          />
+        )}
         <div className="relative w-full h-[230px]">
           <img
             src={image}
@@ -37,6 +52,16 @@ const ProjectCard = ({
           />
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+            <div
+              onClick={() => setIsDetailsCardExpanded(true)}
+              className="purple-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-white"
+            >
+              <ExpandOutlined
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              />
+            </div>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -72,6 +97,7 @@ const ProjectCard = ({
 
 const Works = () => {
   const isMobile = window.innerWidth < 768;
+
   return (
     <>
       <motion.div variants={!isMobile && textVariant()}>

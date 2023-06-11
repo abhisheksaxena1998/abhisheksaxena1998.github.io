@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "@emailjs/browser": "^3.11.0",
     "@react-three/drei": "^9.70.0",
     "@react-three/fiber": "^8.13.0",

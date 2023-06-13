@@ -23,7 +23,7 @@ const ProjectDetails = ({
         open={isDetailsCardExpanded}
         onCancel={handleCancel}
         footer={null}
-        width={isMobile ? "100%" : "60%"}
+        width={isMobile ? "100%" : "69%"}
         bodyStyle={{
           overflowY: "auto",
           maxHeight: "calc(100vh - 250px)",
@@ -35,16 +35,28 @@ const ProjectDetails = ({
           style={{
             width: "100%",
           }}
-          cover={<img alt="example" src={image} style={{ padding: "24px" }} />}
+          cover={
+            <img
+              alt="example"
+              src={image}
+              style={{ padding: isMobile ? "1px" : "0.24rem" }}
+            />
+          }
         >
           {detailed_content?.demonstration?.has_youtube_content ? (
             <>
               {" "}
-              <div className="embed-responsive embed-responsive-16by9">
-                <div className="embed-responsive embed-responsive-16by9">
+              <div
+                className="embed-responsive embed-responsive-16by9"
+                style={{ padding: 0 }}
+              >
+                <div
+                  className="embed-responsive embed-responsive-16by9"
+                  style={{ padding: 0 }}
+                >
                   <iframe
-                    width="100%"
-                    height="502"
+                    width={isMobile ? "292" : "100%"}
+                    height={isMobile ? "200" : "580"}
                     src={detailed_content?.demonstration?.youtube_embed_link}
                     title={detailed_content?.title}
                     frameBorder="1"
@@ -61,7 +73,7 @@ const ProjectDetails = ({
                   alt="example"
                   src={detailed_content?.image}
                   style={{
-                    padding: "0.125rem",
+                    padding: isMobile ? "0rem" : "0.125rem",
                   }}
                 />
               )}
@@ -76,9 +88,9 @@ const ProjectDetails = ({
           </a>
           <div className="mt-5">
             <span className="mt-4 text-black font-medium text-[16px]">
-              <span className="text-black">
+              <p className="p-1">
                 Description : {detailed_content.description}
-              </span>
+              </p>
             </span>
           </div>
           {detailed_content?.demonstration?.resource && (
@@ -86,7 +98,7 @@ const ProjectDetails = ({
               alt="example"
               src={detailed_content?.demonstration?.resource}
               style={{
-                padding: "0.125rem",
+                padding: isMobile ? "0rem" : "0.125rem",
               }}
             />
           )}

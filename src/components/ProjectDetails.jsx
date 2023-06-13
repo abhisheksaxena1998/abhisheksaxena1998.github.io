@@ -55,7 +55,7 @@ const ProjectDetails = ({
                   style={{ padding: 0 }}
                 >
                   <iframe
-                    width={isMobile ? "292" : "100%"}
+                    width={isMobile ? "100%" : "100%"}
                     height={isMobile ? "200" : "580"}
                     src={detailed_content?.demonstration?.youtube_embed_link}
                     title={detailed_content?.title}

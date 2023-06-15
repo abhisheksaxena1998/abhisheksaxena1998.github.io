@@ -32,7 +32,6 @@ import {
   serum_ledger_archtitecture,
   serum_ledger_notification_demo,
   serum_ledger,
-  malicious_url_detector_demo,
   ai_phishing_detector_extension_usage_statistics,
   ai_phishing_detector_extension_statistics,
   ticket_booking_system_usecases,
@@ -331,14 +330,14 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: malicious_url_detector_demo,
+    image: "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM/blob/master/Images/mudv5.gif?raw=true",
     source_code_link:
       "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM",
     detailed_content: {
       title: "Anti-Phishing solution using Machine Learning",
       description:
         "Revamped Malicious URL Detector, that increased its accuracy by 25% and has enabled Continuous Delivery and a Toolchain which can be used to automate builds, tests, deployments. Django REST framework is used here that uses a REST API call.",
-      image: malicious_url_detector_demo,
+      image: "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM/blob/master/Images/mudv5.gif?raw=true",
       image_text: "A.I. Anti-Phishing solution",
       demonstration: {
         has_youtube_content: true,
@@ -433,7 +432,7 @@ const projects = [
       title: "Autonomous Indoor Drone.",
       description:
         "A level 3 autonomous drone that can pass through gates/windows in indoor environment.",
-      image: malicious_url_detector_demo,
+      image: "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM/blob/master/Images/mudv5.gif?raw=true",
       image_text: "Autonomous Indoor Drone.",
       demonstration: {
         has_youtube_content: true,

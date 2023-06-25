@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2  mr-10"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -51,10 +51,29 @@ const Navbar = () => {
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           </motion.div>
-          <div className="text-white text-[18px] font-bold cursor-pointer flex ">
-            <AnimatedWords text="Abhishek Saxena"></AnimatedWords>
+          <div
+            className="text-white text-[18px] font-bold cursor-pointer flex "
+            style={{ marginRight: "2rem" }}
+          >
+            <AnimatedWords
+              text="Abhishek Saxena"
+              styles={{
+                overflow: "hidden",
+                display: "flex",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
+            ></AnimatedWords>
             <div className="sm:block hidden">
-              <AnimatedWords text=" | Software Engineer" />
+              <AnimatedWords
+                text=" | Software Engineer"
+                styles={{
+                  overflow: "hidden",
+                  display: "flex",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                }}
+              />
             </div>
           </div>
         </Link>

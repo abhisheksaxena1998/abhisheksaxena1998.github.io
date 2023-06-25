@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AnimatedWords = ({ text }) => {
+const AnimatedWords = ({ text, styles, delayOffset }) => {
   const words = text.split(" ");
 
   // Variants for Container of words.
@@ -9,7 +9,10 @@ const AnimatedWords = ({ text }) => {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: !delayOffset ? 0.04 * i : 0.04 * i + 1,
+      },
     }),
   };
 
@@ -22,7 +25,7 @@ const AnimatedWords = ({ text }) => {
       transition: {
         type: "spring",
         damping: 5,
-        stiffness: 100,
+        stiffness: 80,
       },
     },
     hidden: {
@@ -31,7 +34,7 @@ const AnimatedWords = ({ text }) => {
       transition: {
         type: "spring",
         damping: 5,
-        stiffness: 100,
+        stiffness: 80,
       },
     },
   };
@@ -39,12 +42,7 @@ const AnimatedWords = ({ text }) => {
   return (
     <motion.div
       className="text-white text-[18px] font-bold cursor-pointer flex"
-      style={{
-        overflow: "hidden",
-        display: "flex",
-        fontSize: "18px",
-        fontWeight: "bold",
-      }}
+      style={styles}
       variants={container}
       initial="hidden"
       animate="visible"

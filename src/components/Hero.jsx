@@ -38,7 +38,7 @@ const Hero = () => {
               text=" Hi, I'm "
               styles={{
                 fontWeight: 900,
-                marginTop: "0.5rem",
+                marginTop: "0.25rem",
                 fontSize: "40px",
               }}
             ></AnimatedWords>
@@ -48,7 +48,6 @@ const Hero = () => {
                 styles={{
                   color: "#915EFF",
                   fontWeight: 900,
-                  marginTop: "0.5rem",
                   fontSize: "40px",
                 }}
                 delayOffset={true}
@@ -60,7 +59,6 @@ const Hero = () => {
                 styles={{
                   color: "#915EFF",
                   fontWeight: 900,
-                  marginTop: "0.5rem",
                   fontSize: "40px",
                 }}
                 delayOffset={true}

@@ -25,7 +25,7 @@ const AnimatedWords = ({ text, styles, delayOffset }) => {
       transition: {
         type: "spring",
         damping: 5,
-        stiffness: 80,
+        stiffness: 20,
       },
     },
     hidden: {
@@ -34,7 +34,7 @@ const AnimatedWords = ({ text, styles, delayOffset }) => {
       transition: {
         type: "spring",
         damping: 5,
-        stiffness: 80,
+        stiffness: 20,
       },
     },
   };

@@ -16,8 +16,9 @@ const Hero = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
+              delay: 0.8,
               type: "spring",
-              stiffness: 50,
+              stiffness: 10,
               damping: 10,
             }}
           >

@@ -1,7 +1,6 @@
 import { Modal } from "antd";
 import { Card } from "antd";
 import { slideIn } from "../utils/motion";
-
 import { motion } from "framer-motion";
 
 const { Meta } = Card;

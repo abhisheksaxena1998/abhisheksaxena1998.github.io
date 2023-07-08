@@ -16,10 +16,10 @@ const Hero = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
-              delay: 0.8,
+              delay: 0.9,
               type: "spring",
-              stiffness: 10,
-              damping: 10,
+              stiffness: 5,
+              damping: 5,
             }}
           >
             <div className="w-5 h-5 rounded-full bg-[#915EFF]" />

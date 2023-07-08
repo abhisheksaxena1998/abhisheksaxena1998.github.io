@@ -213,3 +213,9 @@
 .ant-card-meta-detail {
   padding: 0.25rem;
 }
+.ant-modal {
+  cursor: pointer;
+}
+.ant-modal-close {
+  cursor: pointer !important;
+}

@@ -11,7 +11,7 @@ const AnimatedWords = ({ text, styles, delayOffset }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.12,
-        delayChildren: !delayOffset ? 0.04 * i : 0.04 * i + 1,
+        delayChildren: !delayOffset ? 0.08 * i : 0.08 * i + 1.1,
       },
     }),
   };

@@ -46,7 +46,7 @@ const Navbar = () => {
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1.0 }}
+            animate={{ opacity: 1, scale: 1.02 }}
             transition={{ delay: 1, type: "spring" }}
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />

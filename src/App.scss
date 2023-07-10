@@ -37,7 +37,7 @@ $starCount: 10;
                 left: calc(#{random(50) + 0%});
                 top: calc(#{random(98) + 1%});
                 animation: shootingFrames $duration ease-in-out $delay;
-                opacity: random(75) / 100 + 0.15;
+                opacity: calc(random(75) / 100) + 0.15;
 
             }
         }

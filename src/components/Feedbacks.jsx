@@ -21,7 +21,7 @@ const AchievementCard = ({
   stars,
   visitors,
   points,
-  isMobile
+  isMobile,
 }) => (
   <motion.div
     variants={!isMobile && fadeIn("", "spring", index * 0.5, 0.75)}
@@ -56,9 +56,9 @@ const AchievementCard = ({
                   <a href={redirect_url}>
                     Repository Statistics:
                     <p className="flex flex-row py-4">
-                      {visitors && <img src={visitors} />}
-                      {stars && <img src={stars} />}
-                      {forks && <img src={forks} />}
+                      {visitors && <img src={visitors} alt="github visitors" />}
+                      {stars && <img src={stars} alt="github stars" />}
+                      {forks && <img src={forks} alt="github forks" />}
                     </p>
                   </a>
                 </span>
@@ -91,7 +91,12 @@ const Achievements = () => {
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
         {testimonials.map((testimonial, index) => (
-          <AchievementCard key={testimonial.event} index={index} isMobile={isMobile} {...testimonial} />
+          <AchievementCard
+            key={testimonial.event}
+            index={index}
+            isMobile={isMobile}
+            {...testimonial}
+          />
         ))}
       </div>
     </div>

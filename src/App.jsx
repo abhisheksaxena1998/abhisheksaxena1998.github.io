@@ -12,6 +12,7 @@ import {
   StarsCanvas,
 } from "./components";
 import AnimatedCursor from "react-animated-cursor";
+import "./App.scss";
 
 const App = () => {
   return (
@@ -27,7 +28,11 @@ const App = () => {
           border: "0.2rem solid #E239FF",
         }}
       />
+
       <div className="relative z-0 bg-primary">
+        <div className="stars" />
+        <div className="twinkle" />
+        <div className="clouds" />
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />

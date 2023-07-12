@@ -14,8 +14,8 @@
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
     "@emailjs/browser": "^3.11.0",
-    "@react-three/drei": "^9.78.1",
-    "@react-three/fiber": "^8.13.0",
+    "@react-three/drei": "^9.78.2",
+    "@react-three/fiber": "^8.13.5",
     "antd": "^5.7.0",
     "framer-motion": "^10.12.18",
     "maath": "^0.7.0",

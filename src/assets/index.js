@@ -41,6 +41,7 @@ import ai_phishing_detector_extension_usage_statistics from "./ai_phishing_detec
 import ai_phishing_detector_extension_statistics from "./ai_phishing_detector_extension_statistics.png";
 import ticket_booking_system_usecases from "./ticket_booking_system_usecases.png";
 import amazon_products_analysis_nlp from "./amazon_products_analysis_nlp.gif";
+import linkedin from "./linkedin.png";
 export {
   logo,
   backend,
@@ -83,4 +84,5 @@ export {
   ai_phishing_detector_extension_usage_statistics,
   ticket_booking_system_usecases,
   amazon_products_analysis_nlp,
+  linkedin,
 };

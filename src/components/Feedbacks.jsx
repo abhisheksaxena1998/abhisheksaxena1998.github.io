@@ -5,7 +5,6 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
-import { redirect } from "react-router-dom";
 
 const AchievementCard = ({
   index,

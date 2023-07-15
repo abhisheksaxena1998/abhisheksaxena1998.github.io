@@ -11,12 +11,13 @@ const Hero = () => {
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
+        (
         <div className="flex flex-col justify-center items-center mt-5">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
-              delay: 0.99,
+              delay: 1.75,
               type: "spring",
               stiffness: 2,
               damping: 4,
@@ -26,7 +27,6 @@ const Hero = () => {
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </motion.div>
         </div>
-
         <div>
           <h1
             className={`${styles.heroHeadText} text-white`}
@@ -72,9 +72,8 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      <ComputersCanvas />
-
+      && <ComputersCanvas />
+      )&&
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">

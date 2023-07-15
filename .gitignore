@@ -27,3 +27,5 @@ dist-ssr
 
 # vscode
 .vscode
+package-lock.json
+.gitignore

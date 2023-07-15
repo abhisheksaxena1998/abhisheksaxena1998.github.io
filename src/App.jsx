@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-
+import "./App.scss";
 import {
   About,
   Contact,
@@ -11,12 +11,14 @@ import {
   Works,
   StarsCanvas,
   Profile,
+  WishingStar,
 } from "./components";
-import "./App.scss";
 
 const App = () => {
+  const isMobile = window.innerWidth <= 768;
   return (
     <BrowserRouter>
+      {!isMobile && <WishingStar />}
       <div className="relative z-0 bg-primary">
         <div className="stars" />
         <div className="twinkle" />
@@ -24,7 +26,7 @@ const App = () => {
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center -mt-10">
           <Navbar />
           &&
-          <Hero />
+          <Hero isMobile={isMobile} />
           &&
           <Profile />
         </div>

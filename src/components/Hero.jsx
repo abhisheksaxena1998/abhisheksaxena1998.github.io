@@ -4,8 +4,7 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import AnimatedWords from "./AnimatedWords";
 
-const Hero = () => {
-  const isMobile = window.innerWidth < 768;
+const Hero = ({ isMobile }) => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div

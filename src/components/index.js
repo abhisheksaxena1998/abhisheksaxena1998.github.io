@@ -15,6 +15,7 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import ProjectDetails from "./ProjectDetails";
 import Profile from "./Profile";
+import WishingStar from "./WishingStar";
 
 export {
   Hero,
@@ -32,4 +33,5 @@ export {
   StarsCanvas,
   ProjectDetails,
   Profile,
+  WishingStar,
 };

@@ -317,7 +317,7 @@ const projects = [
         youtube_embed_link: "https://www.youtube.com/embed/-6fd996HWrQ",
       },
     },
-    readme_link: "https://github.com/abhisheksaxena1998/Malicious-Urlv5#readme",
+    readme_link: "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM#readme",
   },
   {
     name: "A.I. Powered Safe Browsing Extension (Chromium and Firefox based)",

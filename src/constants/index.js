@@ -280,6 +280,7 @@ const projects = [
         resource: serum_ledger_notification_demo,
       },
     },
+    readme_link: "https://github.com/abhisheksaxena1998/FluidLedger#readme",
   },
 
   {
@@ -316,6 +317,7 @@ const projects = [
         youtube_embed_link: "https://www.youtube.com/embed/-6fd996HWrQ",
       },
     },
+    readme_link: "https://github.com/abhisheksaxena1998/Malicious-Urlv5#readme",
   },
   {
     name: "A.I. Powered Safe Browsing Extension (Chromium and Firefox based)",
@@ -348,6 +350,8 @@ const projects = [
         resource: ai_phishing_detector_extension_usage_statistics,
       },
     },
+    readme_link:
+      "https://github.com/abhisheksaxena1998/ChromeExtension-Malicious-URL-v5-IBM#readme",
   },
   {
     name: "Movie ticket booking system using REST APIs",
@@ -379,6 +383,7 @@ const projects = [
         resource: ticket_booking_system_usecases,
       },
     },
+    readme_link: "https://github.com/abhisheksaxena1998/Assignment#readme",
   },
   {
     name: "Autonomous Indoor Drone.",
@@ -412,6 +417,7 @@ const projects = [
         youtube_embed_link: "https://www.youtube.com/embed/diFjEheEhRY",
       },
     },
+    readme_link: "https://github.com/abhisheksaxena1998/ADR#readme",
   },
   {
     name: "Classify species of monkeys using CNN (Convolutional Neural Network)",
@@ -441,6 +447,8 @@ const projects = [
 
       demonstration: {},
     },
+    readme_link:
+      "https://github.com/abhisheksaxena1998/Deep-Learning-Image-Classification#readme",
   },
   {
     name: "Malicious URL Detector Application",
@@ -469,6 +477,7 @@ const projects = [
 
       demonstration: {},
     },
+    readme_link: "https://github.com/abhisheksaxena1998/Malicious-Urlv5#readme",
   },
   {
     name: "Gun laws Stance Detector",

@@ -9,6 +9,7 @@ import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useState } from "react";
 import { ExpandOutlined } from "@ant-design/icons";
+import { Tag } from "antd";
 import ProjectDetails from "./ProjectDetails";
 
 const ProjectCard = ({
@@ -20,6 +21,7 @@ const ProjectCard = ({
   source_code_link,
   isMobile,
   detailed_content,
+  readme_link,
 }) => {
   const [isDetailsCardExpanded, setIsDetailsCardExpanded] = useState(false);
   return (
@@ -79,6 +81,13 @@ const ProjectCard = ({
 
         <div className="mt-5">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          {readme_link && (
+            <a href={readme_link}>
+              <Tag bordered={true} color="purple">
+                README.md
+              </Tag>
+            </a>
+          )}
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 

@@ -58,6 +58,7 @@ const ProjectCard = ({
               className="purple-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-white"
             >
               <ExpandOutlined
+                className="expand-icon"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ repeat: Infinity, duration: 2 }}
@@ -70,7 +71,7 @@ const ProjectCard = ({
               <img
                 src={github}
                 alt="source code"
-                className="w-1/2 h-1/2 object-contain"
+                className="w-1/2 h-1/2 object-contain expand-icon"
               />
             </div>
           </div>

@@ -86,7 +86,7 @@ const ProjectDetails = ({
             />
           </a>
           <div className="mt-5">
-            <span className="mt-4 text-black font-medium text-[16px]">
+            <span className="mt-4 text-black font-medium text-[16px] text-justify">
               <p className="p-1">
                 Description : {detailed_content.description}
               </p>

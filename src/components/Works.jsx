@@ -88,7 +88,9 @@ const ProjectCard = ({
               </Tag>
             </a>
           )}
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className="mt-2 text-secondary text-[14px] text-justify">
+            {description}
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -119,7 +121,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={!isMobile && fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with

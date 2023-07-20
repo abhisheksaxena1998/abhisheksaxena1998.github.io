@@ -79,7 +79,7 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div>
+        <div className="mt-4">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           {readme_link && (
             <a href={readme_link}>

@@ -29,13 +29,10 @@ import {
   smart_india_hackathon,
   flipkart_grid,
   amex,
-  serum_ledger_archtitecture,
-  serum_ledger_notification_demo,
   serum_ledger,
   ai_phishing_detector_extension_usage_statistics,
   ai_phishing_detector_extension_statistics,
   ticket_booking_system_usecases,
-  amazon_products_analysis_nlp,
 } from "../assets";
 
 export const navLinks = [
@@ -272,12 +269,14 @@ const projects = [
       title: "Serum Ledger",
       description:
         "A web application to make Blood/Plasma donations in efficient way with an always on extension that detects live location (Latitude, Longitude) reverse geocodes it and notifies if there are any acceptors and donors in vicinity with measured accuracy.",
-      image: serum_ledger_archtitecture,
+      image:
+        "https://github.com/abhisheksaxena1998/FluidLedger/blob/master/static/serum_ledger_archtitecture.gif?raw=true",
       image_text: "Serum Ledger overall flow",
       demonstration: {
         title: "Chrome extension",
         description: "Notification System demonstration",
-        resource: serum_ledger_notification_demo,
+        resource:
+          "https://github.com/abhisheksaxena1998/FluidLedger/blob/master/static/serum_ledger_notification.gif?raw=true",
       },
     },
     readme_link: "https://github.com/abhisheksaxena1998/FluidLedger#readme",
@@ -317,7 +316,8 @@ const projects = [
         youtube_embed_link: "https://www.youtube.com/embed/-6fd996HWrQ",
       },
     },
-    readme_link: "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM#readme",
+    readme_link:
+      "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM#readme",
   },
   {
     name: "A.I. Powered Safe Browsing Extension (Chromium and Firefox based)",
@@ -556,7 +556,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: amazon_products_analysis_nlp,
+    image:
+      "https://github.com/abhisheksaxena1998/amazon-live-analysis/blob/master/static/amazon_products_analysis_nlp.gif?raw=true",
     source_code_link:
       "https://github.com/abhisheksaxena1998/amazon-live-analysis",
     detailed_content: {

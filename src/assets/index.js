@@ -34,13 +34,10 @@ import amex from "./amex.png";
 import flipkart_grid from "./flipkart_grid.png";
 import smart_india_hackathon from "./smart_india_hackathon.png";
 import technoutsav from "./technoutsav.png";
-import serum_ledger_archtitecture from "./serum_ledger_archtitecture.gif";
-import serum_ledger_notification_demo from "./serum_ledger_notification.gif";
 import serum_ledger from "./serum_ledger.gif";
 import ai_phishing_detector_extension_usage_statistics from "./ai_phishing_detector_extension_usage_statistics.png";
 import ai_phishing_detector_extension_statistics from "./ai_phishing_detector_extension_statistics.png";
 import ticket_booking_system_usecases from "./ticket_booking_system_usecases.png";
-import amazon_products_analysis_nlp from "./amazon_products_analysis_nlp.gif";
 import linkedin from "./linkedin.png";
 export {
   logo,
@@ -77,12 +74,9 @@ export {
   smart_india_hackathon,
   flipkart_grid,
   amex,
-  serum_ledger_archtitecture,
-  serum_ledger_notification_demo,
   serum_ledger,
   ai_phishing_detector_extension_statistics,
   ai_phishing_detector_extension_usage_statistics,
   ticket_booking_system_usecases,
-  amazon_products_analysis_nlp,
   linkedin,
 };

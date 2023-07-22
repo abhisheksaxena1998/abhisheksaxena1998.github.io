@@ -25,12 +25,9 @@ const App = () => {
         <div className="clouds" />
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center -mt-10">
           <Navbar />
-          &&
           <Hero isMobile={isMobile} />
-          &&
           <Profile />
         </div>
-        &&
         <About />
         <Experience />
         <Tech />

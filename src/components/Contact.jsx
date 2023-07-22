@@ -13,8 +13,6 @@ const Context = React.createContext({
   name: "Default",
 });
 const Contact = () => {
-  const [SuccessMsg, setSuccessMsg] = useState("");
-  const [ErrorMsg, setErrorMsg] = useState("");
   const [validToken, setValidToken] = useState(null);
   const formRef = useRef();
   const captchaRef = useRef(null);
@@ -73,7 +71,6 @@ const Contact = () => {
     setValidToken(valid_token);
 
     if (validToken === true) {
-      setSuccessMsg("Hurray!! you have submitted the form");
       emailjs
         .send(
           import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -115,7 +112,6 @@ const Contact = () => {
           }
         );
     } else {
-      setErrorMsg(" Sorry!! Verify you are not a bot");
       setLoading(false);
       openNotification(
         "warning",

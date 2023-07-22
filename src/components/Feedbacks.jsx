@@ -9,9 +9,6 @@ import { testimonials } from "../constants";
 const AchievementCard = ({
   index,
   testimonial,
-  name,
-  designation,
-  company,
   image,
   event,
   repo_url,
@@ -21,6 +18,8 @@ const AchievementCard = ({
   visitors,
   points,
   isMobile,
+  award_text,
+  award_link,
 }) => (
   <motion.div
     variants={!isMobile && fadeIn("", "spring", index * 0.5, 0.75)}
@@ -30,6 +29,13 @@ const AchievementCard = ({
 
     <div className="mt-1">
       <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
+      {award_text && (
+        <a href={award_link}>
+          <div className="text-white tracking-wider text-[18px] mt-2">
+            <p className="award-text">{award_text}</p>
+          </div>
+        </a>
+      )}
 
       <div className="mt-7 flex justify-between items-center gap-1 flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row">
         <div className="flex-4 flex flex-col px-3 py-1 gap-5">
@@ -46,7 +52,7 @@ const AchievementCard = ({
               <a href={redirect_url}>
                 <img
                   src={repo_url}
-                  alt={`feedback_by-${name}`}
+                  alt={`feedback_by-${index}`}
                   className="w-[20rem]"
                 />
               </a>
@@ -68,7 +74,7 @@ const AchievementCard = ({
 
         <img
           src={image}
-          alt={`feedback_by-${name}`}
+          alt={`feedback_by-${index}`}
           className="w-[15rem] h-[15rem] rounded-full object-cover"
         />
       </div>

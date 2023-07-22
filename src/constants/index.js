@@ -178,9 +178,6 @@ const testimonials = [
     event: "Finalist CodeStreet 2020",
     testimonial:
       "Among top 12 finalist teams, received appreciation from jury for innovative prototype.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
     image: amex,
     github_link: "https://github.com/",
     repo_url: null,
@@ -192,11 +189,10 @@ const testimonials = [
   },
   {
     event: "Flipkart Grid 2.0",
+    award_text: "Dare2Compete Awards 2021",
+    award_link: "https://unstop.com/awards/u/abhishek-kumar-saxena-645510/2021",
     testimonial:
       "Qualified pre-final round for Flipkart GRiD 2.0 - Robotics Challenge under the problem statement Autonomous Indoor Drone.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
     image: flipkart_grid,
     github_link: "https://github.com/",
     repo_url:
@@ -213,9 +209,6 @@ const testimonials = [
   {
     event: "Semi-Finalist Technoutsav 3.0",
     testimonial: "TechE thread, theme data science/machine learning.",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
     image: technoutsav,
     github_link: "https://github.com/",
     redirect_url: null,
@@ -226,9 +219,6 @@ const testimonials = [
     event: "Smart India Hackathon 2020 (Software Edition)",
     testimonial:
       "Nominated for Smart India Hackathon 2020 (Software Edition) from Jaypee Institute of Information Technology.",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
     image: smart_india_hackathon,
     github_link: "https://github.com/",
     redirect_url: "https://github.com/abhisheksaxena1998/Malicious-Urlv5",

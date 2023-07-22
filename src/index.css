@@ -315,3 +315,21 @@ html {
     transform: scale(1.42);
   }
 }
+.award-text {
+  font-size: 1.25rem;
+  font-weight: 900;
+  background: -webkit-linear-gradient(
+    135deg,
+    #6bc5f8,
+    #cf59e6,
+    #6bc5f8,
+    #cf59e6
+  );
+  background: linear-gradient(-45deg, #6bc5f8, #cf59e6, #6bc5f8, #cf59e6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  -webkit-animation: gradient 3s ease infinite;
+  animation: gradient 3s ease infinite;
+}

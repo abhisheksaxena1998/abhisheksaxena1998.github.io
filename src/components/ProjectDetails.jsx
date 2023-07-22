@@ -54,6 +54,7 @@ const ProjectDetails = ({
                   style={{ padding: 0 }}
                 >
                   <iframe
+                    className="w-full aspect-video rounded-lg shadow-lg"
                     width={isMobile ? "100%" : "100%"}
                     height={isMobile ? "200" : "580"}
                     src={detailed_content?.demonstration?.youtube_embed_link}

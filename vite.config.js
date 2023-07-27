@@ -6,7 +6,7 @@ export default defineConfig({
   base: "/",
   plugins: [react()],
   build: {
-    assetsInlineLimit: "2048", // 2kb
+    assetsInlineLimit: "4096",
     rollupOptions: {
       output: {
         manualChunks(id) {

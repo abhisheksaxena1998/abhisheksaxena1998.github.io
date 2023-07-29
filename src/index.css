@@ -351,4 +351,5 @@ html {
   background-size: 400% 400%;
   -webkit-animation: gradient 3s ease infinite;
   animation: gradient 3s ease infinite;
+  margin-top: 1.95rem;
 }

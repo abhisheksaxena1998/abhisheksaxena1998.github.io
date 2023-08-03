@@ -12,11 +12,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.4",
+    "@ant-design/icons": "^5.1.4",
     "@emailjs/browser": "^3.11.0",
-    "@react-three/drei": "^9.80.1",
+    "@react-three/drei": "^9.80.0",
     "@react-three/fiber": "^8.13.6",
-    "antd": "^5.8.1",
+    "antd": "^5.7.3",
     "framer-motion": "^10.15.0",
     "maath": "^0.7.0",
     "react": "^18.2.0",
@@ -28,13 +28,13 @@
     "three": "^0.155.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.18",
+    "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.4",
+    "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
-    "sass": "^1.64.2",
+    "sass": "^1.64.1",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.8"
+    "vite": "^4.4.7"
   }
 }

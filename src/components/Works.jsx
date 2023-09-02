@@ -26,7 +26,7 @@ const ProjectCard = ({
   const [isDetailsCardExpanded, setIsDetailsCardExpanded] = useState(false);
   return (
     <motion.div
-      variants={!isMobile && fadeIn("up", "spring", index * 0.5, 0.75)}
+      variants={!isMobile && fadeIn("up", "spring", index * 0.45, 0.75)}
       whileHover={{ scale: 1.05 }}
     >
       <Tilt

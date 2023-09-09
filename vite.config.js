@@ -6,6 +6,7 @@ export default defineConfig({
   base: "/",
   plugins: [react()],
   build: {
+    minify: true,
     assetsInlineLimit: "4096",
     rollupOptions: {
       output: {

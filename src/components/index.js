@@ -1,21 +1,21 @@
-import {
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
-  StarsCanvas,
-} from "./canvas";
-import Hero from "./Hero";
-import Navbar from "./Navbar";
-import About from "./About";
-import Tech from "./Tech";
-import Experience from "./Experience";
-import Works from "./Works";
-import Feedbacks from "./Feedbacks";
-import Contact from "./Contact";
-import CanvasLoader from "./Loader";
-import ProjectDetails from "./ProjectDetails";
-import Profile from "./Profile";
-import WishingStar from "./WishingStar";
+import { lazy } from "react";
+
+const EarthCanvas = lazy(() => import("./canvas/EarthCanvas"));
+const BallCanvas = lazy(() => import("./canvas/BallCanvas"));
+const ComputersCanvas = lazy(() => import("./canvas/ComputersCanvas"));
+const StarsCanvas = lazy(() => import("./canvas/StarsCanvas"));
+const Hero = lazy(() => import("./Hero"));
+const Navbar = lazy(() => import("./Navbar"));
+const About = lazy(() => import("./About"));
+const Tech = lazy(() => import("./Tech"));
+const Experience = lazy(() => import("./Experience"));
+const Works = lazy(() => import("./Works"));
+const Feedbacks = lazy(() => import("./Feedbacks"));
+const Contact = lazy(() => import("./Contact"));
+const CanvasLoader = lazy(() => import("./Loader"));
+const ProjectDetails = lazy(() => import("./ProjectDetails"));
+const Profile = lazy(() => import("./Profile"));
+const WishingStar = lazy(() => import("./WishingStar"));
 
 export {
   Hero,

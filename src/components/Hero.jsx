@@ -1,8 +1,9 @@
+import React, { lazy } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
-import AnimatedWords from "./AnimatedWords";
+const ComputersCanvas = lazy(() => import("./canvas/Computers"));
+const AnimatedWords = lazy(() => import("./AnimatedWords"));
 
 const Hero = ({ isMobile }) => {
   return (

@@ -1,21 +1,27 @@
 import { BrowserRouter } from "react-router-dom";
+import { useState, useEffect, lazy } from "react";
 import "./App.scss";
-import {
-  About,
-  Contact,
-  Experience,
-  Feedbacks,
-  Hero,
-  Navbar,
-  Tech,
-  Works,
-  StarsCanvas,
-  Profile,
-  WishingStar,
-} from "./components";
+const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
+const Experience = lazy(() => import("./components/Experience"));
+const Feedbacks = lazy(() => import("./components/Feedbacks"));
+const Hero = lazy(() => import("./components/Hero"));
+const Navbar = lazy(() => import("./components/Navbar"));
+const Tech = lazy(() => import("./components/Tech"));
+const Works = lazy(() => import("./components/Works"));
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
+const Profile = lazy(() => import("./components/Profile"));
+const WishingStar = lazy(() => import("./components/WishingStar"));
 
 const App = () => {
-  const isMobile = window.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <BrowserRouter>
       {!isMobile && <WishingStar />}

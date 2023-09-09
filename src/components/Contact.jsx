@@ -1,13 +1,14 @@
-import React, { useRef, useState, useEffect, useMemo } from "react";
+import React, { useRef, useState, useEffect, useMemo, lazy } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
-import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
+const emailjs = lazy(() => import("@emailjs/browser"));
+const styles = lazy(() => import("../styles"));
+const EarthCanvas = lazy(() => import("./canvas/Earth"));
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import ReCAPTCHA from "react-google-recaptcha";
+const ReCAPTCHA = lazy(() => import("react-google-recaptcha"));
 import { notification } from "antd";
+
 
 const Context = React.createContext({
   name: "Default",

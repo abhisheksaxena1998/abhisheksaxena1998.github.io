@@ -2,13 +2,12 @@ import React, { useRef, useState, useEffect, useMemo, lazy } from "react";
 import { motion } from "framer-motion";
 
 const emailjs = lazy(() => import("@emailjs/browser"));
-const styles = lazy(() => import("../styles"));
+import { styles } from "../styles";
 const EarthCanvas = lazy(() => import("./canvas/Earth"));
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 const ReCAPTCHA = lazy(() => import("react-google-recaptcha"));
 import { notification } from "antd";
-
 
 const Context = React.createContext({
   name: "Default",

@@ -1,5 +1,5 @@
-import{r as c,R as E}from"./react-d998b26c.js";import{N as O,u as T,a as x,b as P,c as B,R as F}from"./react-router-def3222b.js";import{s as _,c as b,a as j}from"./@remix-run-726c34cc.js";/**
- * React Router DOM v6.15.0
+import{r as c,R as E}from"./react-d998b26c.js";import{N as O,u as T,a as x,b as P,c as B,R as F}from"./react-router-e29e4047.js";import{s as _,c as b,a as j}from"./@remix-run-95056f6d.js";/**
+ * React Router DOM v6.16.0
  *
  * Copyright (c) Remix Software Inc.
  *

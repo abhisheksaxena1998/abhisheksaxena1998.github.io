@@ -1,11 +1,11 @@
-import React, { lazy } from "react";
+import React, { lazy, memo } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 const ComputersCanvas = lazy(() => import("./canvas/Computers"));
 const AnimatedWords = lazy(() => import("./AnimatedWords"));
 
-const Hero = ({ isMobile }) => {
+const Hero = memo(({ isMobile }) => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -93,6 +93,6 @@ const Hero = ({ isMobile }) => {
       </div>
     </section>
   );
-};
+});
 
 export default Hero;

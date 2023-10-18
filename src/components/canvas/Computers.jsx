@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -22,7 +22,7 @@ const lightProps = {
   },
 };
 
-const Computers = ({ isMobile }) => {
+const Computers = memo(({ isMobile }) => {
   const { scene } = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -38,7 +38,7 @@ const Computers = ({ isMobile }) => {
       />
     </mesh>
   );
-};
+});
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -48,7 +48,8 @@ const ComputersCanvas = () => {
     setIsMobile(mediaQuery.matches);
     const handleMediaQueryChange = (event) => setIsMobile(event.matches);
     mediaQuery.addEventListener("change", handleMediaQueryChange);
-    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
   }, []);
 
   return (

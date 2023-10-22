@@ -152,7 +152,7 @@ const experiences = [
     company_name: "",
     icon: creator,
     iconBg: "#E6DEDD",
-    date: "July 2022 – Present",
+    date: "July 2022 - Present",
     points: ["Worked on: Python/Django, ReactJS, GraphQL, AWS"],
   },
   {
@@ -234,6 +234,53 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "MindMart",
+    description:
+      "MindMart is a solution that enables visual search, by using deep learning and generative AI, that allows customers to find products by uploading images",
+    tags: [
+      {
+        name: "Machine Learning",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Django",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Python",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Generative AI",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "ReactJS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image:
+      "https://github.com/abhisheksaxena1998/machine-minds-client/raw/main/src/assets/mindmart.png",
+    source_code_link:
+      "https://github.com/abhisheksaxena1998/machine-minds-client",
+    detailed_content: {
+      title: "MindMart",
+      description:
+        "MindMart is a solution that enables visual search, by using deep learning and generative AI, that allows customers to find products by uploading images. It resolves the problem of “subjectiveness” with text-based search by using deep learning to facilitate visual search. USP: Users can upload a photo of almost anything and instantaneously they will be able to shop for items contained within the category.",
+      image:
+        "https://github.com/abhisheksaxena1998/machine-minds-client/raw/main/src/assets/Architecture.png",
+      image_text: "MindMart overall flow",
+      demonstration: {
+        title: "MindMart",
+        description: "MindMart demonstration",
+        resource:
+          "https://github.com/abhisheksaxena1998/machine-minds-client/blob/main/Machine%20Minds%20Presentation.gif?raw=true",
+      },
+    },
+    readme_link:
+      "https://github.com/abhisheksaxena1998/machine-minds-client#readme",
+  },
   {
     name: "Serum Ledger",
     description:

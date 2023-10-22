@@ -45,6 +45,7 @@ const ProjectDetails = ({
             }}
             cover={
               <img
+                loading="lazy"
                 alt="example"
                 src={image}
                 style={{ padding: isMobile ? "1px" : "0.24rem" }}
@@ -79,6 +80,7 @@ const ProjectDetails = ({
               <div className="max-w-screen-lg mx-auto pb-10 flex justify-center">
                 {detailed_content?.image && (
                   <img
+                    loading="lazy"
                     alt="example"
                     src={detailed_content?.image}
                     style={{
@@ -104,6 +106,7 @@ const ProjectDetails = ({
             </div>
             {detailed_content?.demonstration?.resource && (
               <img
+                loading="lazy"
                 alt="example"
                 src={detailed_content?.demonstration?.resource}
                 style={{

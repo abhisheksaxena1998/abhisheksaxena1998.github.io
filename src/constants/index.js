@@ -357,7 +357,7 @@ const projects = [
       "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM#readme",
   },
   {
-    name: "A.I. Powered Safe Browsing Extension (Chromium and Firefox based)",
+    name: "A.I. Powered Safe Browsing Extension (Based on Chromium and Firefox)",
     description:
       "Always-on detection system (Browser Extension) to provide protection within limited internet connectivity restricted networks, or while connected to a risky WIFI network.",
     tags: [
@@ -376,7 +376,7 @@ const projects = [
 
     detailed_content: {
       title:
-        "A.I. Powered Safe Browsing Extension (Chromium and Firefox based)",
+        "A.I. Powered Safe Browsing Extension (Based on Chromium and Firefox)",
       description:
         "Implemented through REST APIs and JavaScript an Always-on detection system (Browser Extension) to provide protection within limited internet connectivity restricted networks, or while connected to a risky WIFI network. Web Browser extension that consumes very little data and is extremely fast. Machine Learning backend based on dynamic features like WHOIS, ALEXA RANK to predict safety status of a URL. Django REST API that is linked to machine learning model through an endpoint of web application. Though the Chrome browser enables safe browsing by default but that is not sufficient against exponentially growing phishing sites. It is proved that this Extension is efficient than Google safe browsing. Being prepared with Safe Browsing Extension can help world deal with cybercriminals better.",
       image: ai_phishing_detector_extension_statistics,
@@ -459,7 +459,7 @@ const projects = [
   {
     name: "Classify species of monkeys using CNN (Convolutional Neural Network)",
     description:
-      "A Deep Learning Classifier to classify various species of Monkeys. ResNet architecture is used here as it tackles the degradation problem most common in deep networks, where the model accuracy gets saturated and then degrades rapidly. Confusion Matrix : The diagonal elements represent the number of images for which the predicted label is equal to the true label, while off-diagonal elements are those that are mislabeled by the classifier.",
+      "A Deep Learning Classifier to classify various species of Monkeys. ResNet architecture is used here as it tackles the degradation problem most common in deep networks, where the model accuracy gets saturated and then degrades rapidly.",
     tags: [
       {
         name: "image-processing",

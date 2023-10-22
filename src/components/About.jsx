@@ -47,6 +47,17 @@ const ServiceCard = ({ index, title, icon, links }) => (
 );
 
 const About = () => {
+  let startDate = new Date("2021-02-01");
+  let currentDate = new Date();
+
+  let years = currentDate.getFullYear() - startDate.getFullYear();
+  let months = currentDate.getMonth() - startDate.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -58,11 +69,12 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
       >
-        I'm a skilled software developer with experience in Python/Django, AWS,
-        TypeScript, JavaScript, and expertise in frameworks like React. I'm a
-        quick learner and collaborate closely with clients to create efficient,
-        scalable, and user-friendly solutions that solve real-world problems.
-        Let's work together to bring your ideas to life!
+        I'm a skilled Full-Stack software developer with {years} years {months}{" "}
+        months product development experience in Python/Django, AWS, TypeScript,
+        JavaScript, and expertise in frameworks like React. I'm a quick learner
+        and collaborate closely to create efficient, scalable, and user-friendly
+        solutions that solve real-world problems. Let's work together to bring
+        up ideas to life!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

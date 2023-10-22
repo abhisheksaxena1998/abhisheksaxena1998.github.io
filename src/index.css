@@ -443,3 +443,7 @@ html {
       0 0 200px #0072ff;
   }
 }
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(242 243 245 / var(--tw-text-opacity));
+}

@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1000,
     minify: true,
-    assetsInlineLimit: "2048",
+    assetsInlineLimit: "1024",
     rollupOptions: {
       output: {
         manualChunks(id) {

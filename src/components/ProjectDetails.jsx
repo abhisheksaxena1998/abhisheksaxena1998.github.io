@@ -1,6 +1,8 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
+import { Spin } from "antd";
+import "../index.css";
 
 const Modal = lazy(() =>
   import("antd").then((module) => ({ default: module.Modal }))
@@ -20,9 +22,22 @@ const ProjectDetails = ({
   source_code_link,
   image,
 }) => {
+  const [isCoverImageLoaded, setIsCoverImageLoaded] = useState(false);
+  const [isContentImageLoaded, setIsContentImageLoaded] = useState(false);
+  const [isResourceLoaded, setIsresourceLoaded] = useState(false);
   const handleCancel = () => {
     setIsDetailsCardExpanded(false);
   };
+  const handleCoverImageLoad = () => {
+    setIsCoverImageLoaded(true);
+  };
+  const handleContentImageLoad = () => {
+    setIsContentImageLoaded(true);
+  };
+  const handleResourseImageLoad = () => {
+    setIsresourceLoaded(true);
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <motion.div variants={slideIn("left", "tween", 0.2, 1)}>
@@ -44,12 +59,24 @@ const ProjectDetails = ({
               width: "100%",
             }}
             cover={
-              <img
-                loading="lazy"
-                alt="example"
-                src={image}
-                style={{ padding: isMobile ? "1px" : "0.24rem" }}
-              />
+              <>
+                {!isCoverImageLoaded && (
+                  <Spin size="large" className="mt-28 mb-28">
+                    <div className="content" />
+                  </Spin>
+                )}
+                <img
+                  className="shadow-lg"
+                  loading="lazy"
+                  alt="example"
+                  src={image}
+                  style={{
+                    padding: isMobile ? "1px" : "0.24rem",
+                    display: isCoverImageLoaded ? {} : { display: "none" },
+                  }}
+                  onLoad={handleCoverImageLoad}
+                />
+              </>
             }
           >
             {detailed_content?.demonstration?.has_youtube_content ? (
@@ -69,7 +96,6 @@ const ProjectDetails = ({
                       height={isMobile ? "200" : "580"}
                       src={detailed_content?.demonstration?.youtube_embed_link}
                       title={detailed_content?.title}
-                      frameBorder="1"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     ></iframe>
@@ -77,15 +103,24 @@ const ProjectDetails = ({
                 </div>
               </>
             ) : (
-              <div className="max-w-screen-lg mx-auto pb-10 flex justify-center">
+              <div className="max-w-screen-lg mx-auto pb-10 flex justify-center mt-4">
+                {detailed_content?.image && !isContentImageLoaded && (
+                  <Spin size="large" className="mt-28 mb-28">
+                    <div className="content" />
+                  </Spin>
+                )}
+
                 {detailed_content?.image && (
                   <img
+                    className="shadow-lg"
                     loading="lazy"
                     alt="example"
                     src={detailed_content?.image}
                     style={{
                       padding: isMobile ? "0rem" : "0.125rem",
+                      display: isContentImageLoaded ? {} : { display: "none" },
                     }}
+                    onLoad={handleContentImageLoad}
                   />
                 )}
               </div>
@@ -104,20 +139,31 @@ const ProjectDetails = ({
                 </p>
               </span>
             </div>
+            {detailed_content?.demonstration?.resource && !isResourceLoaded && (
+              <Spin size="large" className="mt-28 mb-28">
+                <div className="content" />
+              </Spin>
+            )}
             {detailed_content?.demonstration?.resource && (
               <img
+                className="shadow-lg"
                 loading="lazy"
                 alt="example"
                 src={detailed_content?.demonstration?.resource}
                 style={{
                   padding: isMobile ? "0rem" : "0.125rem",
                 }}
+                onLoad={handleResourseImageLoad}
               />
             )}
             <Meta
               title={detailed_content?.demonstration?.title}
               description={detailed_content?.demonstration?.description}
-              style={{ marginTop: "1rem", marginBottom: "1rem" }}
+              style={{
+                marginTop: "1rem",
+                marginBottom: "1rem",
+                display: isResourceLoaded ? {} : { display: "none" },
+              }}
             />
           </Card>
         </Modal>

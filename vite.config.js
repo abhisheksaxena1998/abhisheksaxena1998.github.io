@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1000,
-    minify: "terser",
+    minify: true,
     assetsInlineLimit: "2048",
     rollupOptions: {
       output: {

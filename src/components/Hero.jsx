@@ -43,7 +43,9 @@ const Hero = memo(({ isMobile }) => {
                 fontSize: "40px",
               }}
             ></AnimatedWords>
-            <span className="text-[#915EFF]">
+            <span
+              className={isMobile ? "text-[#915EFF]" : "text-[#915EFF] mt-1"}
+            >
               <AnimatedWords
                 text="Abhishek "
                 styles={{
@@ -54,7 +56,9 @@ const Hero = memo(({ isMobile }) => {
                 delayOffset={true}
               ></AnimatedWords>
             </span>
-            <span className="text-[#915EFF]">
+            <span
+              className={isMobile ? "text-[#915EFF]" : "text-[#915EFF] mt-1"}
+            >
               <AnimatedWords
                 text=" Saxena "
                 styles={{

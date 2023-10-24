@@ -52,6 +52,7 @@ const AchievementCard = React.memo(
               <>
                 <a href={redirect_url}>
                   <img
+                    loading="lazy"
                     src={repo_url}
                     alt={`feedback_by-${index}`}
                     className="w-[20rem]"
@@ -76,6 +77,7 @@ const AchievementCard = React.memo(
           </div>
 
           <img
+            loading="lazy"
             src={image}
             alt={`feedback_by-${index}`}
             className="w-[15rem] h-[15rem] rounded-full object-cover"

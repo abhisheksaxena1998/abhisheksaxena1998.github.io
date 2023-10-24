@@ -48,7 +48,12 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1.02 }}
             transition={{ delay: 1, type: "spring" }}
           >
-            <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+            <img
+              loading="lazy"
+              src={logo}
+              alt="logo"
+              className="w-9 h-9 object-contain"
+            />
           </motion.div>
           <div
             className="text-white text-[18px] font-bold cursor-pointer flex "
@@ -93,6 +98,7 @@ const Navbar = () => {
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
+            loading="lazy"
             src={toggle ? close : menu}
             alt="menu"
             className="w-[28px] h-[28px] object-contain"

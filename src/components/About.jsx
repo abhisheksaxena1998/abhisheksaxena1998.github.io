@@ -29,6 +29,7 @@ const ServiceCard = ({ index, title, icon, links }) => (
         {links.map((link) => (
           <div className="flex flex-row" key={link.technology}>
             <img
+              loading="lazy"
               src={link.technology_icon}
               alt="web-development"
               className="w-16 h-16 object-contain"

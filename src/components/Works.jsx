@@ -9,7 +9,7 @@ import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useState } from "react";
 import { ExpandOutlined } from "@ant-design/icons";
-import { Tag } from "antd";
+import { Tag, Spin } from "antd";
 import ProjectDetails from "./ProjectDetails";
 
 const ProjectCard = ({
@@ -24,6 +24,10 @@ const ProjectCard = ({
   readme_link,
 }) => {
   const [isDetailsCardExpanded, setIsDetailsCardExpanded] = useState(false);
+  const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false);
+  const handleThumbnailLoad = () => {
+    setIsThumbnailLoaded(true);
+  };
   return (
     <motion.div
       variants={!isMobile && fadeIn("up", "spring", index * 0.45, 0.75)}
@@ -48,11 +52,20 @@ const ProjectCard = ({
           />
         )}
         <div className="relative w-full h-[230px]">
+          {!isThumbnailLoaded && (
+            <Spin size="large" className="mt-28 mb-28 bg-white loader-antd">
+              <div className="content" />
+            </Spin>
+          )}
           <img
             loading="lazy"
             src={image}
             alt="project_image"
             className="w-full h-full object-cover rounded-2xl"
+            style={{
+              display: isThumbnailLoaded ? {} : { display: "none" },
+            }}
+            onLoad={handleThumbnailLoad}
           />
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">

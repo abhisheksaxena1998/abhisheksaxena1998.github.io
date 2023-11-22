@@ -16,7 +16,7 @@
     "@emailjs/browser": "^3.11.0",
     "@react-three/drei": "^9.88.17",
     "@react-three/fiber": "^8.15.11",
-    "antd": "^5.11.2",
+    "antd": "^5.11.3",
     "framer-motion": "^10.16.5",
     "maath": "^0.10.4",
     "react": "^18.2.0",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.38",
-    "@types/react-dom": "^18.2.16",
+    "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",

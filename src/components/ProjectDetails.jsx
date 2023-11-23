@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { Spin } from "antd";
 import "../index.css";
+import { LoadingOutlined } from "@ant-design/icons";
+
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 const Modal = lazy(() =>
   import("antd").then((module) => ({ default: module.Modal }))
@@ -61,7 +64,11 @@ const ProjectDetails = ({
             cover={
               <>
                 {!isCoverImageLoaded && (
-                  <Spin size="large" className="mt-28 mb-28">
+                  <Spin
+                    size="large"
+                    className="mt-28 mb-28"
+                    indicator={antIcon}
+                  >
                     <div className="content" />
                   </Spin>
                 )}
@@ -105,7 +112,11 @@ const ProjectDetails = ({
             ) : (
               <div className="max-w-screen-lg mx-auto pb-10 flex justify-center mt-4">
                 {detailed_content?.image && !isContentImageLoaded && (
-                  <Spin size="large" className="mt-28 mb-28">
+                  <Spin
+                    size="large"
+                    className="mt-28 mb-28"
+                    indicator={antIcon}
+                  >
                     <div className="content" />
                   </Spin>
                 )}
@@ -140,7 +151,7 @@ const ProjectDetails = ({
               </span>
             </div>
             {detailed_content?.demonstration?.resource && !isResourceLoaded && (
-              <Spin size="large" className="mt-28 mb-28">
+              <Spin size="large" className="mt-28 mb-28" indicator={antIcon}>
                 <div className="content" />
               </Spin>
             )}

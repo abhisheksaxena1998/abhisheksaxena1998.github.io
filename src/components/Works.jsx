@@ -11,6 +11,9 @@ import { useState } from "react";
 import { ExpandOutlined } from "@ant-design/icons";
 import { Tag, Spin } from "antd";
 import ProjectDetails from "./ProjectDetails";
+import { LoadingOutlined } from "@ant-design/icons";
+
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 const ProjectCard = ({
   index,
@@ -53,7 +56,11 @@ const ProjectCard = ({
         )}
         <div className="relative w-full h-[230px]">
           {!isThumbnailLoaded && (
-            <Spin size="large" className="mt-28 mb-28 bg-white loader-antd">
+            <Spin
+              size="large"
+              className="mt-28 mb-28 bg-white loader-antd"
+              indicator={antIcon}
+            >
               <div className="content" />
             </Spin>
           )}

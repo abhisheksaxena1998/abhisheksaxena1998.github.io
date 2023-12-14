@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo, lazy } from "react";
 import { motion } from "framer-motion";
 
-const emailjs = lazy(() => import("@emailjs/browser"));
+import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 const EarthCanvas = lazy(() => import("./canvas/Earth"));
 import { SectionWrapper } from "../hoc";

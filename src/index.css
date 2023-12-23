@@ -53,10 +53,10 @@ html {
   );
 }
 
-.green-pink-gradient {
+.blue-purple-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: linear-gradient(90.13deg, #007cce 1.9%, #bf61ff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #007cce 1.9%, #bf61ff 97.5%);
 }
 
 .orange-text-gradient {
@@ -452,7 +452,7 @@ html {
   display: block;
   width: 9px;
   height: 9px;
-  background-color: #5925C3;
+  background-color: #5925c3;
   border-radius: 100%;
   transform: scale(0.75);
   transform-origin: 50% 50%;
@@ -463,7 +463,8 @@ html {
   animation-timing-function: linear;
   animation-direction: alternate;
 }
-.loader-antd:where(.css-dev-only-do-not-override-xu9wm8).ant-spin .ant-spin-dot-item {
+.loader-antd:where(.css-dev-only-do-not-override-xu9wm8).ant-spin
+  .ant-spin-dot-item {
   position: absolute;
   display: block;
   width: 9px;
@@ -478,4 +479,13 @@ html {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
+}
+
+.gradient-border {
+  border: 16px solid #bf61ff;
+  border-image-slice: 1;
+  border-width: 0.02rem;
+  background-origin: border-box;
+  background-clip: border-box;
+  border-image-source: linear-gradient(90.13deg, #007cce 1.9%, #bf61ff 97.5%);
 }

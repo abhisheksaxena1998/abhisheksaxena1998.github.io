@@ -357,7 +357,7 @@ const projects = [
       "https://github.com/abhisheksaxena1998/Malicious-URL-v5-IBM#readme",
   },
   {
-    name: "A.I. Powered Safe Browsing Extension (Based on Chromium and Firefox)",
+    name: "A.I. Powered Safe Browsing Extension",
     description:
       "Always-on detection system (Browser Extension) to provide protection within limited internet connectivity restricted networks, or while connected to a risky WIFI network.",
     tags: [
@@ -457,7 +457,7 @@ const projects = [
     readme_link: "https://github.com/abhisheksaxena1998/ADR#readme",
   },
   {
-    name: "Classify species of monkeys using CNN (Convolutional Neural Network)",
+    name: "Classify species of monkeys using CNN",
     description:
       "A Deep Learning Classifier to classify various species of Monkeys. ResNet architecture is used here as it tackles the degradation problem most common in deep networks, where the model accuracy gets saturated and then degrades rapidly.",
     tags: [

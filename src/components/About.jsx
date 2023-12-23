@@ -11,7 +11,7 @@ const ServiceCard = ({ index, title, icon, links }) => (
   <Tilt className="xs:w-[250px] w-full">
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+      className="w-full blue-purple-gradient p-[1px] rounded-[20px] shadow-card"
       whileHover={{ scale: 1.05 }}
       whileTap={{
         scale: 0.8,

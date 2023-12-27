@@ -1,5 +1,6 @@
 import React, { lazy } from "react";
 import { motion } from "framer-motion";
+import { Alert } from "antd";
 import "react-vertical-timeline-component/style.min.css";
 
 const VerticalTimeline = lazy(() =>
@@ -18,6 +19,13 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+const redirectToLinkedInProfile = () => {
+  window.open(
+    "https://www.linkedin.com/in/abhishek-saxena-5ba805180/",
+    "_blank"
+  );
+};
+
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -29,12 +37,15 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className="flex justify-center items-center w-full h-full">
+        <div
+          className="flex justify-center items-center w-full h-full cursor-pointer"
+          onClick={() => redirectToLinkedInProfile()}
+        >
           <img
             loading="lazy"
             src={experience.icon}
             alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
+            className="w-[60%] h-[60%] object-contain animate-pulse"
           />
         </div>
       }
@@ -73,6 +84,12 @@ const Experience = () => {
         <h2 className={`${styles.sectionHeadText} text-center`}>
           Work Experience.
         </h2>
+        <Alert
+          className="w-1/2 mx-auto mt-8 bg-transparent text-white text-justify"
+          message="Click on lock icon to view more details about my work experience (you will be redirected to my LinkedIn profile)."
+          type="info"
+          showIcon
+        />
       </motion.div>
 
       <div className="mt-20 flex flex-col">

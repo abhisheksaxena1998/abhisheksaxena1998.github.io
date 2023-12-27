@@ -33,6 +33,7 @@ import {
   ai_phishing_detector_extension_usage_statistics,
   ai_phishing_detector_extension_statistics,
   ticket_booking_system_usecases,
+  lock,
 } from "../assets";
 
 export const navLinks = [
@@ -150,7 +151,7 @@ const experiences = [
   {
     title: "SOFTWARE ENGINEER II",
     company_name: "",
-    icon: creator,
+    icon: lock,
     iconBg: "#E6DEDD",
     date: "July 2022 - Present",
     points: ["Worked on: Python/Django, ReactJS, GraphQL, AWS"],
@@ -158,7 +159,7 @@ const experiences = [
   {
     title: "SOFTWARE ENGINEER I",
     company_name: "",
-    icon: creator,
+    icon: lock,
     iconBg: "#383E56",
     date: "Jun 2021 - July 2022",
     points: ["Worked on: Python/Django, ReactJS, GraphQL"],
@@ -166,7 +167,7 @@ const experiences = [
   {
     title: "SOFTWARE ENGINEER INTERN",
     company_name: "",
-    icon: creator,
+    icon: lock,
     iconBg: "#E6DEDD",
     date: "Feb 2021 - Jun 2021",
     points: ["Worked on: Python/Django, ReactJS, Google Cloud Platform"],

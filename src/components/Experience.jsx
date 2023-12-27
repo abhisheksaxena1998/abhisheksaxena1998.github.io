@@ -85,8 +85,8 @@ const Experience = () => {
           Work Experience.
         </h2>
         <Alert
-          className="w-1/2 mx-auto mt-8 bg-transparent text-white text-justify"
-          message="Click on lock icon to view more details about my work experience (you will be redirected to my LinkedIn profile)."
+          className="w-1/2 mx-auto mt-8 bg-transparent text-white text-center"
+          message="Click on lock icon to view more details about my work experience."
           type="info"
           showIcon
         />

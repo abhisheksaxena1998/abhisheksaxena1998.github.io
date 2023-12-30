@@ -489,3 +489,20 @@ html {
   background-clip: border-box;
   border-image-source: linear-gradient(90.13deg, #007cce 1.9%, #bf61ff 97.5%);
 }
+
+.glow-dot {
+  background: -webkit-linear-gradient(
+    135deg,
+    #6bc5f8,
+    #cf59e6,
+    #6bc5f8,
+    #cf59e6
+  );
+  background: linear-gradient(-45deg, #6bc5f8, #cf59e6, #6bc5f8, #cf59e6);
+
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  -webkit-animation: gradient 3s ease infinite;
+  animation: gradient 3s ease infinite;
+  z-index: 24;
+}

@@ -80,7 +80,7 @@ const Hero = memo(({ isMobile }) => {
       <ComputersCanvas />)
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about" aria-label="Scroll button">
-          <div className="w-[35px] h-[64px] rounded-3xl border-6 border-secondary flex justify-center items-start p-2 bg-transparent border border-gray-400">
+          <div className="animate-pulse w-[35px] h-[64px] rounded-3xl border-6 border-secondary flex justify-center items-start p-2 bg-transparent border border-gray-400">
             <motion.div
               animate={{
                 y: [0, 24, 0],

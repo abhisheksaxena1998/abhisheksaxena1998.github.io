@@ -482,12 +482,10 @@ html {
 }
 
 .gradient-border {
-  border: 16px solid #bf61ff;
-  border-image-slice: 1;
+  border: 0.1rem solid cornflowerblue;
   border-width: 0.02rem;
   background-origin: border-box;
   background-clip: border-box;
-  border-image-source: linear-gradient(90.13deg, #007cce 1.9%, #bf61ff 97.5%);
 }
 
 .glow-dot {

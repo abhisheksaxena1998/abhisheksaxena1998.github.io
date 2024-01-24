@@ -25,7 +25,8 @@
     "react-router-dom": "^6.21.3",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.160.1"
+    "three": "^0.160.1",
+    "vite-plugin-compression": "^0.5.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.48",

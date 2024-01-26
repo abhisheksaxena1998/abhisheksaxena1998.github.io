@@ -5,7 +5,12 @@ import compress from "vite-plugin-compression";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/",
-  plugins: [react(), compress()],
+  plugins: [
+    react(),
+    compress({
+      exts: ["bin", "js", "css", "html", "svg", "jpeg", "jpg", "png", "gif"],
+    }),
+  ],
   build: {
     chunkSizeWarningLimit: 1000,
     minify: true,

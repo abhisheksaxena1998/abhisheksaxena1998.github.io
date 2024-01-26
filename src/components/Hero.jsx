@@ -23,7 +23,6 @@ const Hero = memo(({ isMobile }) => {
               damping: 4,
             }}
           >
-            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </motion.div>
         </div>

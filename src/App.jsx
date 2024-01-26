@@ -28,7 +28,11 @@ const App = () => {
       <div className="relative z-0 bg-primary">
         <div className="stars" />
         <div className="twinkle" />
-        <div className="clouds" />
+        {!isMobile && (
+          <>
+            <div className="clouds" />
+          </>
+        )}
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center -mt-10">
           <Navbar />
           <Hero isMobile={isMobile} />

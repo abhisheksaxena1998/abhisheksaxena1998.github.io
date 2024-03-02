@@ -43,15 +43,17 @@ const AnimatedWords = ({ text, styles, delayOffset }) => {
     <motion.div
       className="text-white text-[18px] font-bold cursor-pointer flex"
       style={styles}
-      variants={container}
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, delay: 0.4 }}
     >
       {words.map((word, index) => (
         <motion.span
-          variants={child}
-          style={{ marginRight: "5px" }}
+          style={{ marginRight: "5px", display: "inline-block" }}
           key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: index * 0.1 }}
         >
           {word}
         </motion.span>

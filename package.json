@@ -12,30 +12,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.3.1",
+    "@ant-design/icons": "^5.3.7",
     "@emailjs/browser": "^4.3.3",
-    "@react-three/drei": "^9.105.4",
-    "@react-three/fiber": "^8.16.2",
-    "antd": "^5.16.4",
-    "framer-motion": "^11.1.7",
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.6",
+    "antd": "^5.17.2",
+    "framer-motion": "^11.2.3",
     "maath": "^0.10.7",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-google-recaptcha": "^3.1.0",
-    "react-router-dom": "^6.23.0",
+    "react-router-dom": "^6.23.1",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
     "three": "^0.164.1",
     "vite-plugin-compression": "^0.5.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.0",
+    "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.35",
-    "sass": "^1.75.0",
+    "sass": "^1.77.1",
     "tailwindcss": "^3.4.3",
-    "vite": "^5.2.10"
+    "vite": "^5.2.11"
   }
 }

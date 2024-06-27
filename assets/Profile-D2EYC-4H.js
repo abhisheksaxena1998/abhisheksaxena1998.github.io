@@ -1,0 +1,1 @@
+import{j as e}from"./index-B-Pc-DIu.js";const i="/assets/linkedin-B26qw2yn.png",s=()=>e.jsx("div",{className:"profiles",children:e.jsx("a",{href:"https://www.linkedin.com/in/abhishek-saxena-5ba805180/",children:e.jsx("img",{loading:"lazy",src:i,alt:"Abhishek Saxena linkedin profile",className:"w-14 h-14 object-contain"})})});export{s as default};

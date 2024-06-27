@@ -1,11 +1,27 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
-import { motion } from "framer-motion";
 import AnimatedWords from "./AnimatedWords";
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -55,20 +71,25 @@ const Navbar = () => {
               className="w-9 h-9 object-contain"
             />
           </motion.div>
-          <div
-            className="text-white text-[18px] font-bold cursor-pointer flex "
+          <motion.div
+            className="text-white text-[18px] font-bold cursor-pointer flex"
             style={{ marginRight: "2rem" }}
+            variants={container}
+            initial="hidden"
+            animate="visible"
           >
-            <AnimatedWords
-              text="Abhishek Saxena"
-              styles={{
-                overflow: "hidden",
-                display: "flex",
-                fontSize: "18px",
-                fontWeight: "bold",
-              }}
-            ></AnimatedWords>
-            <div className="sm:block hidden">
+            <motion.div variants={item}>
+              <AnimatedWords
+                text="Abhishek Saxena"
+                styles={{
+                  overflow: "hidden",
+                  display: "flex",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                }}
+              />
+            </motion.div>
+            <motion.div className="sm:block hidden" variants={item}>
               <AnimatedWords
                 text=" | Software Engineer"
                 styles={{
@@ -78,23 +99,29 @@ const Navbar = () => {
                   fontWeight: "bold",
                 }}
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <motion.ul
+          className="list-none hidden sm:flex flex-row gap-10"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
           {navLinks.map((nav) => (
-            <li
+            <motion.li
               key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
+              variants={item}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
@@ -110,9 +137,14 @@ const Navbar = () => {
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+            <motion.ul
+              className="list-none flex justify-end items-start flex-1 flex-col gap-4"
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
               {navLinks.map((nav) => (
-                <li
+                <motion.li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
                     active === nav.title ? "text-white" : "text-secondary"
@@ -121,15 +153,17 @@ const Navbar = () => {
                     setToggle(!toggle);
                     setActive(nav.title);
                   }}
+                  variants={item}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
       </div>
     </nav>
   );
 };
+
 export default Navbar;

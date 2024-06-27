@@ -1,10 +1,27 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
 
 const AchievementCard = React.memo(
   ({
@@ -23,7 +40,7 @@ const AchievementCard = React.memo(
     award_link,
   }) => (
     <motion.div
-      variants={!isMobile && fadeIn("", "spring", index * 0.5, 0.75)}
+      variants={!isMobile ? item : {}}
       className="bg-black-200 p-10 rounded-3xl xs:w-[] w-full"
     >
       <p className="text-white font-black text-[40px]">{event}</p>
@@ -89,26 +106,40 @@ const AchievementCard = React.memo(
 );
 
 const Achievements = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const isMobile = window.innerWidth < 768;
+
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    <div className={`mt-12 bg-black-100 rounded-[20px]`} ref={ref}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
-        <motion.div variants={!isMobile && textVariant()}>
+        <motion.div
+          variants={!isMobile ? container : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <p className={styles.sectionSubText}></p>
           <h2 className={styles.sectionHeadText}>ACHIEVEMENTS.</h2>
         </motion.div>
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => (
-          <AchievementCard
-            key={testimonial.event}
-            index={index}
-            isMobile={isMobile}
-            {...testimonial}
-          />
-        ))}
+        <motion.div
+          variants={!isMobile ? container : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="flex flex-wrap gap-7"
+        >
+          {testimonials.map((testimonial, index) => (
+            <AchievementCard
+              key={testimonial.event}
+              index={index}
+              isMobile={isMobile}
+              {...testimonial}
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState, memo } from "react";
+import React, { Suspense, useEffect, useState, memo, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -23,7 +23,7 @@ const lightProps = {
 };
 
 const Computers = memo(({ isMobile }) => {
-  const { scene } = useGLTF("./desktop_pc/scene.gltf");
+  const { scene } = useMemo(() => useGLTF("./desktop_pc/scene.gltf"), []);
 
   return (
     <mesh>
@@ -58,7 +58,7 @@ const ComputersCanvas = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, antialias: true }}
       style={{ marginTop: "-1rem" }}
     >
       <Suspense fallback={<CanvasLoader />}>

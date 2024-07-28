@@ -1,4 +1,4 @@
-import React, { Suspense, memo, useMemo } from "react";
+import React, { Suspense, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -11,7 +11,7 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = memo((props) => {
-  const decal = useMemo(() => useTexture(props.imgUrl), [props.imgUrl]);
+  const decal = useTexture(props.imgUrl);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>

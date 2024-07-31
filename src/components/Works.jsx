@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { container, fadeIn, textVariant } from "../utils/motion";
 import { useState } from "react";
 import { ExpandOutlined } from "@ant-design/icons";
 import { Tag, Spin } from "antd";
@@ -32,10 +32,7 @@ const ProjectCard = ({
     setIsThumbnailLoaded(true);
   };
   return (
-    <motion.div
-      variants={!isMobile && fadeIn("up", "spring", index * 0.45, 0.75)}
-      whileHover={{ scale: 1.05 }}
-    >
+    <motion.div variants={!isMobile} whileHover={{ scale: 1.05 }}>
       <Tilt
         options={{
           max: 45,
@@ -131,18 +128,25 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const isMobile = window.innerWidth < 768;
 
   return (
-    <>
-      <motion.div variants={!isMobile && textVariant()}>
+    <div ref={ref}>
+      <motion.div
+        variants={!isMobile ? container : {}}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
       <div className="w-full flex">
         <motion.p
-          variants={!isMobile && fadeIn("", "", 0.1, 1)}
+          // variants={!isMobile && fadeIn("", "", 0.1, 1)}
+          // variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
         >
           Following projects showcases my skills and experience through
@@ -163,7 +167,7 @@ const Works = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

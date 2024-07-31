@@ -48,7 +48,7 @@ const Hero = memo(({ isMobile }) => {
               <AnimatedWords
                 text="Abhishek "
                 styles={{
-                  color: "#915EFF",
+                  color: "#6066EC",
                   fontWeight: 900,
                   fontSize: "40px",
                 }}
@@ -61,7 +61,7 @@ const Hero = memo(({ isMobile }) => {
               <AnimatedWords
                 text=" Saxena "
                 styles={{
-                  color: "#915EFF",
+                  color: "#6066EC",
                   fontWeight: 900,
                   fontSize: "40px",
                 }}
@@ -72,7 +72,10 @@ const Hero = memo(({ isMobile }) => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I am a Software Engineer <br className="sm:block hidden" />
             turning ideas into
-            <span className="glow"> real life products.</span>
+            <span className={`glow ${styles.heroSubText}`}>
+              {" "}
+              real life products.
+            </span>
           </p>
         </div>
       </div>

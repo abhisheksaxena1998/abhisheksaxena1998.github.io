@@ -116,7 +116,7 @@ const Achievements = () => {
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
         <motion.div
-          variants={!isMobile ? container : {}}
+          variants={container}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >

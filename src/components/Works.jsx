@@ -135,7 +135,7 @@ const Works = () => {
   return (
     <div ref={ref}>
       <motion.div
-        variants={!isMobile ? container : {}}
+        variants={container}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >

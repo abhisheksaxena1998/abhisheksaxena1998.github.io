@@ -8,7 +8,17 @@ export default defineConfig({
   plugins: [
     react(),
     compress({
-      exts: ["bin", "js", "css", "html", "svg", "jpeg", "jpg", "png", "gif"],
+      exts: [
+        ".bin",
+        ".js",
+        ".css",
+        ".html",
+        ".svg",
+        ".jpeg",
+        ".jpg",
+        ".png",
+        ".gif",
+      ],
       threshold: 1024,
     }),
   ],
@@ -18,17 +28,5 @@ export default defineConfig({
     cssCodeSplit: true,
     assetsInlineLimit: "4096",
     assetFileNames: "assets/[name].[hash][ext]",
-    rollupOptions: {
-      output: {
-        assetFileNames: "assets/[name].[hash][ext]",
-        chunkFileNames: "chunks/[name].[hash].js",
-        entryFileNames: "assets/[name].[hash].js",
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            return id.toString().split("node_modules/")[1].split("/")[0];
-          }
-        },
-      },
-    },
   },
 });

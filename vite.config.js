@@ -8,47 +8,15 @@ export default defineConfig({
   plugins: [
     react(),
     compress({
-      // Ensure 'exts' is defined as an array of strings
-      exts: [
-        ".bin",
-        ".js",
-        ".css",
-        ".html",
-        ".svg",
-        ".jpeg",
-        ".jpg",
-        ".png",
-        ".gif",
-      ],
-      // Optional: Set the threshold for compression
-      threshold: 1024, // Minimum file size in bytes for compression
-      // Optional: Uncomment if you want to delete original files after compression
-      // deleteOriginFile: true,
+      exts: ["bin", "js", "css", "html", "svg", "jpeg", "jpg", "png", "gif"],
+      threshold: 1024,
     }),
   ],
-  server: {
-    fs: {
-      strict: false,
-    },
-    port: 3000,
-    open: true,
-  },
   build: {
     chunkSizeWarningLimit: 1000,
+    minify: true,
     cssCodeSplit: true,
-    minify: "terser", // Ensure Terser is being used for minification
-    assetsInlineLimit: 4096,
-    rollupOptions: {
-      output: {
-        assetFileNames: "assets/[name].[hash][ext]",
-        chunkFileNames: "chunks/[name].[hash].js",
-        entryFileNames: "assets/[name].[hash].js",
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            return id.toString().split("node_modules/")[1].split("/")[0];
-          }
-        },
-      },
-    },
+    assetsInlineLimit: "4096",
+    assetFileNames: "assets/[name].[hash][ext]",
   },
 });

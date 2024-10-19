@@ -1,59 +1,53 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AnimatedWords = ({ text, styles, delayOffset }) => {
+const AnimatedWords = ({ text, styles, delayOffset = 0 }) => {
   const words = text.split(" ");
 
-  // Variants for Container of words.
+  // Variants for Container of words
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: !delayOffset ? 0.08 * i : 0.08 * i + 1.1,
+        staggerChildren: 0.1,
+        delayChildren: 0.05 * i + delayOffset,
       },
     }),
   };
 
-  // Variants for each word.
-
-  const child = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        damping: 5,
-        stiffness: 5,
-      },
-    },
+  // Variants for each word
+  const wordAnimation = {
     hidden: {
       opacity: 0,
-      x: 20,
+      y: 20,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
       transition: {
         type: "spring",
-        damping: 5,
-        stiffness: 5,
+        damping: 7,
+        stiffness: 100,
       },
     },
   };
 
   return (
     <motion.div
-      className="text-white text-[18px] font-bold cursor-pointer flex"
+      className="flex flex-wrap"
       style={styles}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, delay: 0.4 }}
+      initial="hidden"
+      animate="visible"
+      variants={container}
     >
       {words.map((word, index) => (
         <motion.span
-          style={{ marginRight: "5px", display: "inline-block" }}
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: index * 0.1 }}
+          style={{ marginRight: "8px", display: "inline-block" }}
+          variants={wordAnimation}
         >
           {word}
         </motion.span>

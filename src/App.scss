@@ -1,105 +1,124 @@
+@use 'sass:math';
+
+// Common Styles
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #000;
-    height: 100vh;
+  background: #000;
+  height: 100vh;
 }
 
 $shootingStarContainerCount: 3;
 $starCount: 10;
+$minRotation: 35deg;
+$rotationRange: 10deg;
+$minOpacity: 0.7;
+$minDelay: 200ms;
+$minDuration: 750ms;
+$maxDelay: 60s;
+$maxDuration: 2s;
+$maxPosition: 100%;
+$starWidth: 200px;
+$starTranslate: 800px;
+$maxStarTranslate: 100px;
+
+@mixin shootingStarPosition($containerIndex, $starIndex) {
+  .shootingStarContainer:nth-child(#{$containerIndex}) &:nth-child(#{$starIndex}) {
+    $delay: math.random() * $maxDelay + $minDelay;
+    $duration: math.random() * $maxDuration + $minDuration;
+    left: math.random() * 50%;
+    top: math.random() * 98% + 1%;
+    animation-duration: $duration;
+    animation-delay: $delay;
+  }
+}
 
 .shootingStarContainer {
-    @for $j from 1 through $shootingStarContainerCount {
-        &:nth-child(#{$j}) {
-            position: absolute;
-            height: 100%;
-            transform: rotate(random(10)+35deg);
-        }
+  @for $j from 1 through $shootingStarContainerCount {
+    &:nth-child(#{$j}) {
+      position: absolute;
+      height: 100%;
+      transform: rotate(math.random() * $rotationRange + $minRotation);
     }
+  }
 }
 
 .shootingStar {
-    position: absolute;
-    height: 1px;
-    background: linear-gradient(-70deg, rgba(255, 235, 235, 1), rgba(0, 0, 0, 1));
-    animation: shootingFrames ease-in-out;
-    opacity: calc(random(70) / 100);
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(-70deg, rgba(255, 235, 235, 1), rgba(0, 0, 0, 1));
+  animation: shootingFrames ease-in-out;
+  opacity: math.random() * $minOpacity;
 
-    @for $j from 1 through $shootingStarContainerCount {
-        @for $i from 1 through $starCount {
-            .shootingStarContainer:nth-child(#{$j}) &:nth-child(#{$i}) {
-                $delay: random(60000) + 200ms;
-                $duration: random(2000) + 750ms;
-                left: random(50) + 0%;
-                top: random(98) + 1%;
-                animation-duration: $duration;
-                animation-delay: $delay;
-            }
-        }
+  @for $j from 1 through $shootingStarContainerCount {
+    @for $i from 1 through $starCount {
+      @include shootingStarPosition($j, $i);
     }
+  }
 }
 
 @keyframes shootingFrames {
-    0% {
-        transform: translateX(0);
-        width: 0;
-    }
+  0% {
+    transform: translateX(0);
+    width: 0;
+  }
 
-    30% {
-        width: 200px;
-    }
+  30% {
+    width: $starWidth;
+  }
 
-    100% {
-        width: 0;
-        transform: translateX(random(100) + 800px);
-    }
+  100% {
+    width: 0;
+    transform: translateX(math.random() * $maxStarTranslate + $starTranslate);
+  }
+}
+
+// Common background setup
+@mixin backgroundAnimation($bgUrl, $animationName, $duration) {
+  background: transparent url($bgUrl) repeat top center;
+  height: 100%;
+  animation: $animationName $duration linear infinite;
 }
 
 .stars,
 .twinkle,
 .clouds {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    display:block;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .stars {
-    background:#000 url('./assets/stars.jpg') repeat top center;
+  background: #000 url('./assets/stars.jpg') repeat top center;
 }
 
-
 .twinkle {
-    background:transparent url('./assets/twinkleMask.png') ;
-    height:100%;
-    animation:twinkleFrames2 300s linear infinite;
+  @include backgroundAnimation('./assets/twinkleMask.png', twinkleFrames2, 300s);
 }
 
 .clouds {
-    background:transparent url('./assets/clouds.png') repeat top center;
-    height:100%;
-    animation:cloudsFrames 300s linear infinite;
+  @include backgroundAnimation('./assets/clouds.png', cloudsFrames, 300s);
 }
 
 @keyframes twinkleFrames {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
 }
 
 @keyframes twinkleFrames2 {
-    from {background-position:0 0;}
-    to {background-position:10000px 5000px;}
+  from { background-position: 0 0; }
+  to { background-position: 10000px 5000px; }
 }
 
 @keyframes cloudsFrames {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
+  from { background-position: 0 0; }
+  to { background-position: 10000px 0; }
 }

@@ -37,9 +37,9 @@ const Hero = memo(({ isMobile }) => {
             <AnimatedWords
               text=" Hi, I'm "
               styles={{
-                fontWeight: 900,
+                fontWeight: 700,
                 marginTop: "0.25rem",
-                fontSize: "40px",
+                fontSize: "36px",
               }}
             ></AnimatedWords>
             <span
@@ -48,9 +48,9 @@ const Hero = memo(({ isMobile }) => {
               <AnimatedWords
                 text="Abhishek "
                 styles={{
-                  color: "#6066EC",
-                  fontWeight: 900,
-                  fontSize: "40px",
+                  color: "#bbe6ff",
+                  fontWeight: 700,
+                  fontSize: "36px",
                 }}
                 delayOffset={true}
               ></AnimatedWords>
@@ -61,9 +61,9 @@ const Hero = memo(({ isMobile }) => {
               <AnimatedWords
                 text=" Saxena "
                 styles={{
-                  color: "#6066EC",
-                  fontWeight: 900,
-                  fontSize: "40px",
+                  color: "#bbe6ff",
+                  fontWeight: 700,
+                  fontSize: "36px",
                 }}
                 delayOffset={true}
               ></AnimatedWords>

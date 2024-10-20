@@ -3,11 +3,11 @@ import { motion, useInView } from "framer-motion";
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
 
+// Container animation variants
 const container = {
-  hidden: { opacity: 1, scale: 0 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -18,11 +18,13 @@ const container = {
   },
 };
 
+// Item animation variants for individual achievement cards
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: { y: 0, opacity: 1 },
 };
 
+// AchievementCard component
 const AchievementCard = React.memo(
   ({
     index,
@@ -48,7 +50,7 @@ const AchievementCard = React.memo(
       <div className="mt-1">
         <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
         {award_text && (
-          <a href={award_link}>
+          <a href={award_link} target="_blank" rel="noopener noreferrer">
             <div className="text-white tracking-wider text-[18px] mt-2">
               <p className="award-text">{award_text}</p>
             </div>
@@ -67,7 +69,11 @@ const AchievementCard = React.memo(
 
             {repo_url && (
               <>
-                <a href={redirect_url}>
+                <a
+                  href={redirect_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     loading="lazy"
                     src={repo_url}
@@ -77,7 +83,11 @@ const AchievementCard = React.memo(
                 </a>
                 <span className="text-white font-medium text-[16px]">
                   <span className="blue-text-gradient">
-                    <a href={redirect_url}>
+                    <a
+                      href={redirect_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Repository Statistics:
                       <p className="flex flex-row py-4">
                         {visitors && (
@@ -105,6 +115,7 @@ const AchievementCard = React.memo(
   )
 );
 
+// Achievements component
 const Achievements = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

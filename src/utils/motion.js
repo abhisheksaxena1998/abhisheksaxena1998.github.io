@@ -37,6 +37,33 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
+export const fadeInProjects = (
+  direction = "up", // Default direction
+  type = "tween", // Default type
+  delay = 0, // Default delay
+  duration = 0.5 // Default duration
+) => {
+  return {
+    hidden: {
+      x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+      opacity: 0,
+    },
+    visible: {
+      // Changed from 'show' to 'visible'
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: type,
+        delay: delay,
+        duration: duration,
+        ease: "easeOut",
+      },
+    },
+  };
+};
+
 export const zoomIn = (delay, duration) => {
   return {
     hidden: {

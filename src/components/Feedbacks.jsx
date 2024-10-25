@@ -141,7 +141,11 @@ const Achievements = () => {
           <h2 className={styles.sectionHeadText}>ACHIEVEMENTS.</h2>
         </motion.div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
+      <div
+        className={`-mt-20 pb-14 ${
+          !isMobile && styles.paddingX
+        } flex flex-wrap gap-7`}
+      >
         <motion.div
           variants={container} // Apply container variants here
           initial="hidden"

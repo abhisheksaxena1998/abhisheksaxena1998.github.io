@@ -504,3 +504,27 @@ html {
   animation: gradient 3s ease infinite;
   z-index: 24;
 }
+/* styles.css or a similar CSS file */
+.canvas-loader {
+  width: 50px;
+  height: 50px;
+  border: 6px solid rgba(85, 44, 165, 0.3);
+  border-top-color: #ffffff; /* Loader color */
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-text {
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: white; /* Adjust color as needed */
+}

@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { testimonials } from "../constants";
@@ -12,16 +11,23 @@ const container = {
     opacity: 1,
     scale: 1,
     transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
+      delayChildren: 1, // Increased delay before starting child animations
+      staggerChildren: 0.8, // Increased stagger delay between each card
     },
   },
 };
 
 // Item animation variants for individual achievement cards
 const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
+  hidden: { y: 40, opacity: 0 }, // Increased initial offset
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8, // Slower animation for each item
+      ease: "easeOut", // Smooth easing for a polished feel
+    },
+  },
 };
 
 // AchievementCard component
@@ -42,7 +48,7 @@ const AchievementCard = React.memo(
     award_link,
   }) => (
     <motion.div
-      variants={!isMobile ? item : {}}
+      variants={item} // Use `item` variants for individual cards
       className="bg-black-200 p-10 rounded-3xl xs:w-[] w-full"
     >
       <p className="text-white font-black text-[40px]">{event}</p>
@@ -137,7 +143,7 @@ const Achievements = () => {
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
         <motion.div
-          variants={!isMobile ? container : {}}
+          variants={container} // Apply container variants here
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="flex flex-wrap gap-7"

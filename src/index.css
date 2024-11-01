@@ -587,6 +587,7 @@ html {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .profile-container {
+    display: none;
     bottom: 0.8rem;
     left: 0.8rem;
     padding: 6px;
@@ -601,6 +602,7 @@ html {
 
 @media (max-width: 480px) {
   .profile-container {
+    display: none;
     bottom: 0.4rem;
     left: 0.4rem;
     padding: 4px;

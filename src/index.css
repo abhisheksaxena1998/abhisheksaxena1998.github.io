@@ -528,3 +528,87 @@ html {
   font-size: 1.5em;
   color: white; /* Adjust color as needed */
 }
+/* Profile container */
+.profile-container {
+  position: fixed;
+  bottom: 3.5rem;
+  left: 4rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: linear-gradient(135deg, #18191f, #1f1f2e);
+  border-radius: 14%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* LinkedIn icon */
+.linkedin-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profile-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 114, 255, 0.4);
+}
+
+.linkedin-icon:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+/* Soft glow effect */
+.profile-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20%;
+  padding: 2px;
+  background: linear-gradient(135deg, #0072ff, transparent);
+  filter: blur(6px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .profile-container {
+    bottom: 0.8rem;
+    left: 0.8rem;
+    padding: 6px;
+    transform: scale(0.9); /* Slightly smaller on tablets */
+  }
+
+  .linkedin-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    bottom: 0.4rem;
+    left: 0.4rem;
+    padding: 4px;
+    transform: scale(0.8); /* Further scaling for small screens */
+  }
+
+  .linkedin-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

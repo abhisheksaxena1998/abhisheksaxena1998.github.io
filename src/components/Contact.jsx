@@ -186,12 +186,14 @@ const Contact = () => {
                 onChange={(value) => setValidToken(value)}
               />
             </label>
-            <button
-              type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
-            >
-              {loading ? "Sending..." : "Send"}
-            </button>
+            <div className="contacts-gradient-border">
+              <button
+                type="submit"
+                className="submit-button relative rounded-xl text-white font-bold"
+              >
+                {loading ? "Sending..." : "Send"}
+              </button>
+            </div>
           </form>
         </motion.div>
 

@@ -614,3 +614,65 @@ html {
     height: 40px;
   }
 }
+/* Custom property for gradient angle */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Gradient border wrapper */
+.contacts-gradient-border {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  border-radius: 10px;
+  background-image: conic-gradient(
+    from var(--angle),
+    #6bc5f8,
+    #cf59e6,
+    #6bc5f8,
+    #cf59e6
+  );
+  animation: spin 4s linear infinite;
+  width: fit-content;
+}
+
+.contacts-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: conic-gradient(
+    from var(--angle),
+    #6bc5f8,
+    #cf59e6,
+    #6bc5f8,
+    #cf59e6
+  );
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+/* Submit button styles */
+.submit-button {
+  background-color: #1c1f2b;
+  padding: 10px 20px; /* Adjust as needed */
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation for the gradient */
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

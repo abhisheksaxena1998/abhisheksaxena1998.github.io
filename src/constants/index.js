@@ -149,11 +149,19 @@ const technologies = [
 
 const experiences = [
   {
+    title: "SOFTWARE ENGINEER III",
+    company_name: "",
+    icon: lock,
+    iconBg: "#383E56",
+    date: "December 2024 - Present",
+    points: ["Worked on: Python/Django, ReactJS, GraphQL, AWS, GCP"],
+  },
+  {
     title: "SOFTWARE ENGINEER II",
     company_name: "",
     icon: lock,
     iconBg: "#E6DEDD",
-    date: "July 2022 - Present",
+    date: "June 2022 - December 2024",
     points: ["Worked on: Python/Django, ReactJS, GraphQL, AWS"],
   },
   {

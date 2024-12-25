@@ -161,7 +161,7 @@ const experiences = [
     company_name: "",
     icon: lock,
     iconBg: "#E6DEDD",
-    date: "June 2022 - December 2024",
+    date: "July 2022 - Present",
     points: ["Worked on: Python/Django, ReactJS, GraphQL, AWS"],
   },
   {
